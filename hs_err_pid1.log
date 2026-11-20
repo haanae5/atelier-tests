@@ -1,0 +1,90 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGBUS (0x7) at pc=0x0000797cbfb9ab10, pid=1, tid=22
+#
+# JRE version: OpenJDK Runtime Environment Corretto-21.0.13.0.11 (21.0.13+11) (build 21.0.13+11-LTS)
+# Java VM: OpenJDK 64-Bit Server VM Corretto-21.0.13.0.11 (21.0.13+11-LTS, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, linux-amd64)
+# Problematic frame:
+# C  [libc.so.6+0x41e7d]  __run_exit_handlers+0x19d
+#
+# No core dump will be written. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   https://github.com/corretto/corretto-21/issues/
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Djava.awt.headless=true -Djdk.http.auth.tunneling.disabledSchemes= -Dscanner.home=/opt/sonar-scanner -Dproject.home=/usr/src org.sonarsource.scanner.cli.Main -Dsonar.token=squ_3c6c09e4962883f19472255f765109ace6496144 -Dsonar.working.directory=/tmp/.scannerwork
+
+Host: AMD Ryzen 7 7735HS with Radeon Graphics, 16 cores, 7G,  ¶Á|y
+Time: Fri Nov 20 11:23:19 2026 UTC elapsed time: 43.563841 seconds (0d 0h 0m 43s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000797cb8153970):  VMThread "VM Thread"          [id=22, stack(0x0000797c915f7000,0x0000797c916f7000) (1024K)]
+
+Stack: [0x0000797c915f7000,0x0000797c916f7000],  sp=0x0000797c916f57a0,  free space=1017k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libc.so.6+0x41e7d]  __run_exit_handlers+0x19d
+
+siginfo: si_signo: 7 (SIGBUS), si_code: 2 (BUS_ADRERR), si_addr: 0x0000797cbfb9ab10
+
+Registers:
+RAX=0x0000797cbfb9ab10, RBX=0x0000000000000000, RCX=0x0000000000000004, RDX=0x0000000000000001
+RSP=0x0000797c916f5798, RBP=0x0000000000000003, RSI=0x0000000000000003, RDI=0x0000797cbfc3b810
+R8 =0x00005fd8c62954c0, R9 =0x0000797cbfc3b810, R10=0x0000000000000000, R11=0x724f2c6fc77cd6b8
+R12=0x0000797cc1395840, R13=0x0000797cc1397300, R14=0x000000000000003e, R15=0x0000797cc13972e8
+RIP=0x0000797cbfb9ab10, EFLAGS=0x0000000000010246, CSGSFS=0x002b000000000033, ERR=0x0000000000000014
+  TRAPNO=0x000000000000000e
+
+XMM[0]=0x0000000000000000 0x0000000000000000
+XMM[1]=0x00000000000000ff 0x000000000000ff00
+XMM[2]=0x636f6c5f72656d69 0x54746978455f4d56
+XMM[3]=0x006b636f6c5f7265 0x6d6954746978455f
+XMM[4]=0x00000000010a0000 0x0000000004000000
+XMM[5]=0x0000000000000000 0x0000000000000000
+XMM[6]=0x0000000000000000 0x0000000000000000
+XMM[7]=0x0000000000000000 0x0000000000000000
+XMM[8]=0x0000797c3800b470 0x0000797c3800b3c0
+XMM[9]=0x0000000000000000 0x0000000000000000
+XMM[10]=0x3f3f3f3f3f3f3f3f 0x3f3f3f3f3f3f3f3f
+XMM[11]=0x9999999999999999 0x9999999999999999
+XMM[12]=0x2020202020202020 0x2020202020202020
+XMM[13]=0x0000000000000000 0x0000000000000000
+XMM[14]=0x0000000000000000 0x0000000000000000
+XMM[15]=0x0000000000000000 0x0000000000000000
+  MXCSR=0x00001fa2
+
+
+Register to memory mapping:
+
+RAX=0x0000797cbfb9ab10: <offset 0x00000000001c1b10> in /lib64/libstdc++.so.6 at 0x0000797cbf9d9000
+RBX=0x0 is null
+RCX=0x0000000000000004 is an unknown value
+RDX=0x0000000000000001 is an unknown value
+RSP=0x0000797c916f5798 points into unknown readable memory: 0x0000797cc11dae7d | 7d ae 1d c1 7c 79 00 00
+RBP=0x0000000000000003 is an unknown value
+RSI=0x0000000000000003 is an unknown value
+RDI=0x0000797cbfc3b810: <offset 0x0000000000262810> in /lib64/libstdc++.so.6 at 0x0000797cbf9d9000
+R8 =0x00005fd8c62954c0 points into unknown readable memory: 0x00005fdd3ba537d5 | d5 37 a5 3b dd 5f 00 00
+R9 =0x0000797cbfc3b810: <offset 0x0000000000262810> in /lib64/libstdc++.so.6 at 0x0000797cbf9d9000
+R10=0x0 is null
+R11=0x724f2c6fc77cd6b8 is an unknown value
+R12=0x0000797cc1395840: <offset 0x00000000001fc840> in /lib64/libc.so.6 at 0x0000797cc1199000
+R13=0x0000797cc1397300: <offset 0x00000000001fe300> in /lib64/libc.so.6 at 0x0000797cc1199000
+R14=0x000000000000003e is an unknown value
+R15=0x0000797cc13972e8: <offset 0x00000000001fe2e8> in /lib64/libc.so.6 at 0x0000797cc1199000
+
+Top of Stack: (sp=0x0000797c916f5798)
+0x0000797c916f5798:   0000797cc11dae7d 0000797c916f57b0   }...|y...Wo.|y..
+0x0000797c916f57a8:   0000797cbf8ce550 0000797c916f5830   P...|y..0Xo.|y..
+0x0000797c916f57b8:   00000001c0c5c680 0000797cc1161518   ............|y..
+0x0000797c916f57c8:   0000797cc118d460 0000797c916f5810   `...|y...Xo.|y..
+0x0000797c916f57d8:   0000000000000003 00000000000003d8   ................
+0x0000797c916f57e8:   0000797cb8153d10 0000797cbf8ce550   .=..|y..P...|y..
+0x0000797c916f57f8:   0000797cc11dafd0 0000000000000000   ....|y..........
+0x0000797c916f5808:   0000797cc0954509 0000797c916f5830   .E..|y..0Xo.|y..
+0x0000797c916f5818:   0000797cc055515a 0000797cb814c9c0   ZQU.|y......|y..
+0x0000797c916f5828:   0000797cb814c9c0 0000797c916f5940   ....|y..@Yo.|y..

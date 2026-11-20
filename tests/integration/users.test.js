@@ -39,3 +39,7 @@ describe('GET /users/:id', () => {
     const { rows } = await db.query('SELECT count(*) FROM users');
     expect(Number(rows[0].count)).toBe(1);
   });
+  test('ne divulgue pas la technologie du serveur', async () => {
+  const res = await request(app).get('/users/1');
+  expect(res.headers['x-powered-by']).toBeUndefined();
+});
