@@ -45,3 +45,4 @@ app.get('/health', (req, res) => {
 });
 
 module.exports = app;
+app.disable('x-powered-by');
